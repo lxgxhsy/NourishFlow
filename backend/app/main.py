@@ -1,3 +1,5 @@
+from contextlib import asynccontextmanager
+
 import meilisearch
 from fastapi import FastAPI
 from sqlalchemy import text
@@ -7,11 +9,9 @@ from app.core.config import settings
 from app.core.db import engine
 from app.models.tables import Article, ArticleChunk, Conversation, Message
 
-app = FastAPI(title="NourishFlow")
 
-
-@app.on_event("startup")
-def startup():
+@asynccontextmanager
+async def lifespan(app: FastAPI):
     with engine.connect() as conn:
         conn.execute(text("CREATE EXTENSION IF NOT EXISTS vector"))
         conn.commit()
@@ -25,6 +25,10 @@ def startup():
         index = client.index("article_chunks")
         index.update_filterable_attributes(["article_id", "tier", "chunk_type"])
         index.update_searchable_attributes(["content", "section_title"])
+    yield
+
+
+app = FastAPI(title="NourishFlow", lifespan=lifespan)
 
 
 @app.get("/api/health")

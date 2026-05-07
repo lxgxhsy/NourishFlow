@@ -1,5 +1,5 @@
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 
 from pgvector.sqlalchemy import Vector
 from sqlalchemy import Column
@@ -17,7 +17,7 @@ class Article(SQLModel, table=True):
     tier: int
     url: str | None = None
     tags: list[str] | None = Field(default=None, sa_column=Column(JSONB))
-    uploaded_at: datetime = Field(default_factory=datetime.utcnow)
+    uploaded_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
 class ArticleChunk(SQLModel, table=True):
@@ -34,14 +34,14 @@ class ArticleChunk(SQLModel, table=True):
         default=None,
         sa_column=Column(Vector(1536), nullable=True),
     )
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
 class Conversation(SQLModel, table=True):
     __tablename__ = "conversations"
 
     id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
 class Message(SQLModel, table=True):
@@ -56,4 +56,4 @@ class Message(SQLModel, table=True):
         sa_column=Column(JSONB),
     )
     llm_model: str | None = None
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
