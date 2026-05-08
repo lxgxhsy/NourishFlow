@@ -9,6 +9,8 @@ from app.core.config import settings
 from app.core.db import engine
 from app.models.tables import Article, ArticleChunk, Conversation, Message
 
+from app.api import chat as chat_router
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -16,6 +18,9 @@ async def lifespan(app: FastAPI):
         conn.execute(text("CREATE EXTENSION IF NOT EXISTS vector"))
         conn.commit()
     SQLModel.metadata.create_all(engine)
+
+    if not settings.deepseek_api_key:
+        raise RuntimeError("DEEPSEEK_API_KEY is not set. Configure it in .env before starting.")
 
     client = meilisearch.Client(settings.meili_url, settings.meili_master_key)
     try:
@@ -29,6 +34,9 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="NourishFlow", lifespan=lifespan)
+
+
+app.include_router(chat_router.router)
 
 
 @app.get("/api/health")
