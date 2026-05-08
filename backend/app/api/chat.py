@@ -87,10 +87,15 @@ def chat(req: ChatRequest):
 
             full_text = "".join(full_text_parts)
 
-            # 7. 解析引用,过滤不在本次检索范围内的 UUID,写入 assistant message
+            # 7. 解析引用,过滤幻觉 + 去重 + 保序,写入 assistant message
             valid_chunk_ids = {c["id"] for c in chunks}
             raw_cited = extract_cited_chunk_ids(full_text)
-            cited_ids = [cid for cid in raw_cited if cid in valid_chunk_ids]
+            seen: set[str] = set()
+            cited_ids: list[str] = []
+            for cid in raw_cited:
+                if cid in valid_chunk_ids and cid not in seen:
+                    seen.add(cid)
+                    cited_ids.append(cid)
 
             session.add(Message(
                 conversation_id=conv.id,
