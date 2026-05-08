@@ -2,6 +2,7 @@ from contextlib import asynccontextmanager
 
 import meilisearch
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 from sqlmodel import SQLModel
 
@@ -36,6 +37,12 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="NourishFlow", lifespan=lifespan)
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(chat_router.router)
 app.include_router(citations_router.router)
