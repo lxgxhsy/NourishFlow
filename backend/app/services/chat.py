@@ -56,4 +56,4 @@ def assemble_messages(
 
 def extract_cited_chunk_ids(text: str) -> list[str]:
     """从 LLM 输出中提取所有 [chunk_id:xxx]."""
-    return re.findall(r"\[chunk_id:([0-9a-f-]+)\]", text)
+    return re.findall(r"\[chunk_id:([0-9a-f-]{36})\]", text)
