@@ -10,6 +10,7 @@ from app.core.db import engine
 from app.models.tables import Article, ArticleChunk, Conversation, Message
 
 from app.api import chat as chat_router
+from app.api import citations as citations_router
 
 
 @asynccontextmanager
@@ -37,6 +38,7 @@ app = FastAPI(title="NourishFlow", lifespan=lifespan)
 
 
 app.include_router(chat_router.router)
+app.include_router(citations_router.router)
 
 
 @app.get("/api/health")
