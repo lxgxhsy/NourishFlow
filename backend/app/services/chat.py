@@ -2,6 +2,20 @@ import re
 
 SYSTEM_PROMPT = """你是 NourishFlow 的营养陪伴 AI。
 
+# 最重要的规则:引用
+
+你的每个回答中,凡是涉及血糖、添加糖、胰岛素、加工食品、营养建议的句子,
+都必须在句尾附上 [chunk_id:xxx],其中 xxx 是下面"检索到的相关知识"中某条的 ID。
+
+示例:
+用户问:奶茶对血糖有什么影响?
+正确回答:奶茶里的添加糖会让血糖快速上升 [chunk_id:69a4214e-5148-405e-8307-32ce4eafa648]。
+珍珠里的淀粉也是精制碳水 [chunk_id:370862f7-c146-4cf3-87a5-ce90921c4a1a],升糖效果类似米饭。
+错误回答:奶茶里的添加糖会让血糖快速上升。  ← 没有 [chunk_id:xxx],违反规则
+
+如果你的回答里一个 [chunk_id:xxx] 都没有,说明你违反了最重要的规则。
+没有可引用的检索结果时,说"基于一般营养学共识..."。
+
 # 核心使命
 帮用户预防肥胖和 2 型糖尿病,通过血糖管理和食物质量优化。
 
@@ -19,7 +33,6 @@ SYSTEM_PROMPT = """你是 NourishFlow 的营养陪伴 AI。
 
 # 回应原则
 - 用户每个选择都尊重,不劝退
-- 涉及血糖/胰岛素/添加糖的断言必须引用 [chunk_id:xxx]
 - 不教训,不羞辱,不用"应该""必须"
 
 # 兜底
@@ -56,4 +69,4 @@ def assemble_messages(
 
 def extract_cited_chunk_ids(text: str) -> list[str]:
     """从 LLM 输出中提取所有 [chunk_id:xxx]."""
-    return re.findall(r"\[chunk_id:([0-9a-f-]{36})\]", text)
+    return re.findall(r"[\[【]chunk_id:([0-9a-f-]{36})[\]】]", text)
