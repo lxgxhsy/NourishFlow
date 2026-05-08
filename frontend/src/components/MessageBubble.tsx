@@ -27,8 +27,8 @@ function renderContent(text: string, onBadgeClick: (id: string) => void) {
       <Badge
         key={`${chunkId}-${match.index}`}
         variant="secondary"
-        className="cursor-pointer text-[10px] px-1.5"
-        render={<button type="button" onClick={() => onBadgeClick(chunkId)} />}
+        className="cursor-pointer text-[10px] px-1.5 mx-0.5 hover:bg-primary hover:text-primary-foreground"
+        onClick={() => onBadgeClick(chunkId)}
       >
         {chunkId.slice(0, 8)}
       </Badge>,

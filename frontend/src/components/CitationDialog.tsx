@@ -5,8 +5,9 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
 } from "@/components/ui/dialog"
+import { Badge } from "@/components/ui/badge"
+import { Separator } from "@/components/ui/separator"
 
 interface Props {
   chunkId: string
@@ -32,41 +33,41 @@ export function CitationDialog({ chunkId, open, onOpenChange }: Props) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-2xl">
         <DialogHeader>
-          <DialogTitle>引用原文</DialogTitle>
-          <DialogDescription>
-            {data?.article.title}
-            {data?.article.pub_year ? ` (${data.article.pub_year})` : ""}
-            {" — "}
-            {data?.article.source_org}
-            {" · tier "}
-            {data?.article.tier}
-          </DialogDescription>
+          <DialogTitle className="flex items-center gap-2 text-lg">
+            {loading ? "加载中..." : error ? "引用详情" : data?.article.title}
+            {data && (
+              <Badge variant="secondary" className="text-xs">
+                Tier {data.article.tier}
+              </Badge>
+            )}
+          </DialogTitle>
+          {data && (
+            <p className="text-xs text-muted-foreground">
+              {data.article.source_org}
+              {data.article.pub_year ? ` · ${data.article.pub_year}` : ""}
+              {data.page_number != null ? ` · 第 ${data.page_number} 页` : ""}
+              {data.section_title ? ` · ${data.section_title}` : ""}
+            </p>
+          )}
         </DialogHeader>
 
-        {loading && <p className="text-muted-foreground">加载中...</p>}
+        <Separator />
+
+        {loading && (
+          <p className="text-muted-foreground text-sm">加载中...</p>
+        )}
         {error && (
-          <p className="text-destructive">
+          <p className="text-destructive text-sm">
             {error}（chunk_id: {chunkId}）
           </p>
         )}
         {data && (
-          <div className="space-y-2">
-            {data.section_title && (
-              <p className="text-xs text-muted-foreground">
-                章节: {data.section_title}
-                {data.page_number != null ? ` · 第 ${data.page_number} 页` : ""}
-              </p>
-            )}
-            {data.page_number != null && !data.section_title && (
-              <p className="text-xs text-muted-foreground">
-                第 {data.page_number} 页
-              </p>
-            )}
-            <p className="text-sm leading-relaxed whitespace-pre-wrap">
+          <div className="max-h-[60vh] overflow-y-auto">
+            <div className="bg-muted/50 rounded-lg p-4 text-sm leading-relaxed">
               {data.content}
-            </p>
+            </div>
           </div>
         )}
       </DialogContent>
