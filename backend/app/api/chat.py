@@ -1,5 +1,4 @@
 import json
-import os
 import uuid
 
 import litellm
@@ -24,8 +23,6 @@ class ChatRequest(BaseModel):
 
 @router.post("/api/chat")
 def chat(req: ChatRequest):
-    if settings.deepseek_api_key:
-        os.environ["DEEPSEEK_API_KEY"] = settings.deepseek_api_key
 
     def sse_stream():
         with Session(engine) as session:
@@ -60,7 +57,15 @@ def chat(req: ChatRequest):
             # 4. 组装 prompt
             messages = assemble_messages(req.message, chunks, history)
 
-            # 5. LiteLLM 流式调用
+            # 5. 先写 user message（LLM 挂了也不丢）
+            session.add(Message(
+                conversation_id=conv.id,
+                role="user",
+                content=req.message,
+            ))
+            session.commit()
+
+            # 6. LiteLLM 流式调用
             response = litellm.completion(
                 model=settings.llm_model,
                 messages=messages,
@@ -82,16 +87,11 @@ def chat(req: ChatRequest):
 
             full_text = "".join(full_text_parts)
 
-            # 7. 解析引用,过滤不在本次检索范围内的 UUID,写入 messages 表
+            # 7. 解析引用,过滤不在本次检索范围内的 UUID,写入 assistant message
             valid_chunk_ids = {c["id"] for c in chunks}
             raw_cited = extract_cited_chunk_ids(full_text)
             cited_ids = [cid for cid in raw_cited if cid in valid_chunk_ids]
 
-            session.add(Message(
-                conversation_id=conv.id,
-                role="user",
-                content=req.message,
-            ))
             session.add(Message(
                 conversation_id=conv.id,
                 role="assistant",
