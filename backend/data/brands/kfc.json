@@ -1,0 +1,87 @@
+{
+  "brand": "肯德基",
+  "category": "西式快餐",
+  "typical_wait_minutes": 5,
+  "lunch_short_score": 8,
+  "blood_sugar_strategy": "优先选原味鸡/烤翅等蛋白主菜,避开汉堡套餐主食(精制面包 + 酱料隐藏糖,GL 极高),搭配玉米沙拉替代薯条,饮料选零度可乐或美式咖啡",
+  "best_choice_for_at_risk": "原味鸡(1块) + 玉米沙拉 + 零度可乐",
+  "signature_dishes": [
+    {
+      "name": "原味鸡",
+      "estimated_calories": 250,
+      "added_sugar_level": "low",
+      "gl_level": "low",
+      "protein_g": 17,
+      "blood_sugar_friendly": true,
+      "tags": ["高蛋白", "低碳水", "经典"],
+      "key_concerns": ["油炸外皮有少量淀粉,去皮可进一步降 GL"],
+      "customization_tips": ["要求去皮或少吃外皮", "搭配玉米沙拉增加膳食纤维"]
+    },
+    {
+      "name": "香辣鸡腿堡",
+      "estimated_calories": 480,
+      "added_sugar_level": "medium",
+      "gl_level": "high",
+      "protein_g": 22,
+      "blood_sugar_friendly": false,
+      "tags": ["热门", "高碳水"],
+      "key_concerns": ["精制白面包胚,GL 高,午后易犯困"],
+      "customization_tips": ["如果可以,要求不加酱料减少隐藏糖", "搭配蔬菜汤平衡"]
+    },
+    {
+      "name": "新奥尔良烤翅",
+      "estimated_calories": 180,
+      "added_sugar_level": "low",
+      "gl_level": "low",
+      "protein_g": 12,
+      "blood_sugar_friendly": true,
+      "tags": ["烤制", "低碳水", "推荐"],
+      "key_concerns": ["腌料含少量糖,但总量可控"],
+      "customization_tips": ["作为加餐或搭配沙拉,2 对就够"]
+    },
+    {
+      "name": "玉米沙拉",
+      "estimated_calories": 80,
+      "added_sugar_level": "low",
+      "gl_level": "low",
+      "protein_g": 2,
+      "blood_sugar_friendly": true,
+      "tags": ["蔬菜", "膳食纤维", "配菜推荐"],
+      "key_concerns": [],
+      "customization_tips": ["用它替代薯条是血糖管理的关键一步"]
+    },
+    {
+      "name": "土豆泥",
+      "estimated_calories": 120,
+      "added_sugar_level": "low",
+      "gl_level": "medium",
+      "protein_g": 2,
+      "blood_sugar_friendly": true,
+      "tags": ["淀粉类配菜"],
+      "key_concerns": ["土豆本身 GL 中等,但份量小影响有限"],
+      "customization_tips": ["小份即可,不要当主食吃"]
+    },
+    {
+      "name": "九珍果汁",
+      "estimated_calories": 150,
+      "added_sugar_level": "high",
+      "gl_level": "high",
+      "protein_g": 0,
+      "blood_sugar_friendly": false,
+      "tags": ["饮料", "高糖"],
+      "key_concerns": ["添加糖高,血糖飙升风险"],
+      "customization_tips": ["换成零度可乐或美式咖啡"]
+    },
+    {
+      "name": "黄金鸡块(5块)",
+      "estimated_calories": 220,
+      "added_sugar_level": "low",
+      "gl_level": "medium",
+      "protein_g": 13,
+      "blood_sugar_friendly": true,
+      "tags": ["油炸", "蛋白质", "外皮裹粉"],
+      "key_concerns": ["外皮裹粉增加碳水,蘸酱常含糖"],
+      "customization_tips": ["蘸番茄酱 < 蘸黑椒酱(后者添加糖低)", "最好不蘸"]
+    }
+  ]
+}

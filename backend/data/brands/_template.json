@@ -1,0 +1,21 @@
+{
+  "brand": "",
+  "category": "",
+  "typical_wait_minutes": 0,
+  "lunch_short_score": 0,
+  "blood_sugar_strategy": "",
+  "best_choice_for_at_risk": "",
+  "signature_dishes": [
+    {
+      "name": "",
+      "estimated_calories": 0,
+      "added_sugar_level": "low",
+      "gl_level": "low",
+      "protein_g": 0,
+      "blood_sugar_friendly": true,
+      "tags": [],
+      "key_concerns": [],
+      "customization_tips": []
+    }
+  ]
+}
