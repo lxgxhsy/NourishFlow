@@ -1,0 +1,87 @@
+{
+  "brand": "瑞幸咖啡",
+  "category": "咖啡茶饮",
+  "typical_wait_minutes": 8,
+  "lunch_short_score": 7,
+  "blood_sugar_strategy": "优先选美式/不另外加糖拿铁,警惕生椰拿铁和厚乳风味饮品的糖浆陷阱,三明治优先于软欧包做短午餐",
+  "best_choice_for_at_risk": "美式咖啡 + 火腿芝士三明治",
+  "signature_dishes": [
+    {
+      "name": "生椰拿铁",
+      "estimated_calories": 250,
+      "added_sugar_level": "high",
+      "gl_level": "medium",
+      "protein_g": 6,
+      "blood_sugar_friendly": false,
+      "tags": ["招牌咖啡", "椰乳", "糖浆"],
+      "key_concerns": ["生椰风味常搭配糖浆,容易被误判成健康选项", "液体糖吸收快"],
+      "customization_tips": ["下单备注不另外加糖", "想喝椰乳风味时选小杯", "不要搭配软欧包"]
+    },
+    {
+      "name": "美式咖啡",
+      "estimated_calories": 10,
+      "added_sugar_level": "low",
+      "gl_level": "low",
+      "protein_g": 0,
+      "blood_sugar_friendly": true,
+      "tags": ["基础咖啡", "无糖", "低热量"],
+      "key_concerns": [],
+      "customization_tips": ["不加糖浆", "不加奶油顶", "午餐配三明治而不是甜面包"]
+    },
+    {
+      "name": "拿铁",
+      "estimated_calories": 160,
+      "added_sugar_level": "low",
+      "gl_level": "low",
+      "protein_g": 8,
+      "blood_sugar_friendly": true,
+      "tags": ["基础咖啡", "牛奶", "无糖可选"],
+      "key_concerns": ["如果加糖浆会从友好选项变成高糖饮品"],
+      "customization_tips": ["明确选择不另外加糖", "不要加风味糖浆", "选热饮比冰饮更不容易加额外糖浆"]
+    },
+    {
+      "name": "燕麦拿铁",
+      "estimated_calories": 190,
+      "added_sugar_level": "low",
+      "gl_level": "medium",
+      "protein_g": 3,
+      "blood_sugar_friendly": true,
+      "tags": ["燕麦奶", "咖啡", "无糖可选"],
+      "key_concerns": ["燕麦奶本身有碳水,比美式更容易抬高餐后血糖"],
+      "customization_tips": ["不另外加糖", "不要加厚乳或奶油顶", "搭配鸡蛋或三明治,不要搭配甜面包"]
+    },
+    {
+      "name": "厚乳拿铁",
+      "estimated_calories": 240,
+      "added_sugar_level": "high",
+      "gl_level": "medium",
+      "protein_g": 7,
+      "blood_sugar_friendly": false,
+      "tags": ["厚乳", "风味咖啡", "奶味"],
+      "key_concerns": ["厚乳版本通常比普通拿铁糖和热量更高", "口感像甜品,容易低估糖负担", "实际是甜品类咖啡,不能当无糖拿铁看待"],
+      "customization_tips": ["要求不另外加糖", "选小杯", "当天不要再加甜点或软欧包"]
+    },
+    {
+      "name": "火腿芝士三明治",
+      "estimated_calories": 330,
+      "added_sugar_level": "low",
+      "gl_level": "medium",
+      "protein_g": 18,
+      "blood_sugar_friendly": true,
+      "tags": ["轻食", "蛋白质", "午餐"],
+      "key_concerns": ["面包仍是精制碳水", "芝士和火腿钠含量偏高"],
+      "customization_tips": ["配美式咖啡或无糖拿铁", "不要再加软欧包", "如果只想垫肚子,半份三明治即可"]
+    },
+    {
+      "name": "软欧包",
+      "estimated_calories": 420,
+      "added_sugar_level": "medium",
+      "gl_level": "high",
+      "protein_g": 8,
+      "blood_sugar_friendly": false,
+      "tags": ["烘焙", "高碳水", "甜口"],
+      "key_concerns": ["面包体 + 夹心馅料,GL 高", "和甜咖啡同点会形成糖 + 淀粉叠加"],
+      "customization_tips": ["不要和生椰拿铁同点", "想吃面包时配美式咖啡", "优先换成三明治"]
+    }
+  ]
+}

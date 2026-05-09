@@ -1,0 +1,98 @@
+{
+  "brand": "星巴克",
+  "category": "咖啡茶饮",
+  "typical_wait_minutes": 10,
+  "lunch_short_score": 7,
+  "blood_sugar_strategy": "优先选美式/不加糖拿铁/燕麦拿铁,避开焦糖摩卡星冰乐等风味咖啡和抹茶拿铁,轻食选三明治而不是蛋糕",
+  "best_choice_for_at_risk": "美式咖啡 + 烤鸡胸肉帕尼尼",
+  "signature_dishes": [
+    {
+      "name": "美式咖啡",
+      "estimated_calories": 15,
+      "added_sugar_level": "low",
+      "gl_level": "low",
+      "protein_g": 0,
+      "blood_sugar_friendly": true,
+      "tags": ["基础咖啡", "无糖", "低热量"],
+      "key_concerns": [],
+      "customization_tips": ["不加糖浆", "不加奶油", "配轻食时优先选三明治"]
+    },
+    {
+      "name": "拿铁",
+      "estimated_calories": 190,
+      "added_sugar_level": "low",
+      "gl_level": "low",
+      "protein_g": 10,
+      "blood_sugar_friendly": true,
+      "tags": ["基础咖啡", "牛奶", "无糖可选"],
+      "key_concerns": ["加风味糖浆后会变成高糖饮品"],
+      "customization_tips": ["选择不加糖浆", "不要加奶油顶", "午餐搭配咸口三明治"]
+    },
+    {
+      "name": "燕麦拿铁",
+      "estimated_calories": 210,
+      "added_sugar_level": "low",
+      "gl_level": "medium",
+      "protein_g": 4,
+      "blood_sugar_friendly": true,
+      "tags": ["燕麦奶", "咖啡", "无糖可选"],
+      "key_concerns": ["燕麦奶有碳水,比美式更有血糖负担"],
+      "customization_tips": ["不加风味糖浆", "不要搭配蛋糕", "如果已经吃主食,换美式更稳"]
+    },
+    {
+      "name": "焦糖玛奇朵",
+      "estimated_calories": 280,
+      "added_sugar_level": "high",
+      "gl_level": "medium",
+      "protein_g": 9,
+      "blood_sugar_friendly": false,
+      "tags": ["风味咖啡", "焦糖", "高糖"],
+      "key_concerns": ["焦糖酱和香草糖浆叠加,添加糖高", "常被误认为只是咖啡"],
+      "customization_tips": ["要求少焦糖淋酱", "糖浆减半", "更推荐换成普通拿铁"]
+    },
+    {
+      "name": "抹茶拿铁",
+      "estimated_calories": 300,
+      "added_sugar_level": "high",
+      "gl_level": "high",
+      "protein_g": 9,
+      "blood_sugar_friendly": false,
+      "tags": ["抹茶", "高糖", "奶饮"],
+      "key_concerns": ["抹茶粉饮品通常预混糖,看似健康但添加糖高"],
+      "customization_tips": ["不要把它当低糖茶饮", "想喝茶味时换无糖茶或美式", "不要搭配蛋糕"]
+    },
+    {
+      "name": "摩卡可可碎片星冰乐",
+      "estimated_calories": 430,
+      "added_sugar_level": "high",
+      "gl_level": "high",
+      "protein_g": 6,
+      "blood_sugar_friendly": false,
+      "tags": ["星冰乐", "甜品饮料", "高糖"],
+      "key_concerns": ["冰沙基底 + 巧克力碎 + 奶油,糖和热量都高", "不适合作为午餐饮品"],
+      "customization_tips": ["不要加奶油", "改成小杯", "更推荐直接换冰美式"]
+    },
+    {
+      "name": "烤鸡胸肉帕尼尼",
+      "estimated_calories": 360,
+      "added_sugar_level": "low",
+      "gl_level": "medium",
+      "protein_g": 24,
+      "blood_sugar_friendly": true,
+      "tags": ["轻食", "蛋白质", "午餐"],
+      "key_concerns": ["面包仍是主食,不适合再叠加甜饮"],
+      "customization_tips": ["配美式咖啡或无糖拿铁", "不要再加蛋糕", "如果只需要垫肚子,吃半份留半份"]
+    },
+    {
+      "name": "纽约芝士蛋糕",
+      "estimated_calories": 430,
+      "added_sugar_level": "high",
+      "gl_level": "high",
+      "protein_g": 8,
+      "blood_sugar_friendly": false,
+      "tags": ["蛋糕", "甜品", "高糖"],
+      "key_concerns": ["糖 + 油脂 + 精制面粉组合,餐后血糖和总热量负担都高"],
+      "customization_tips": ["不要作为午餐后固定甜点", "想吃时两人分一块", "饮品必须选美式或无糖茶"]
+    }
+  ]
+}

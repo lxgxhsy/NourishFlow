@@ -1,0 +1,87 @@
+{
+  "brand": "麦当劳",
+  "category": "西式快餐",
+  "typical_wait_minutes": 5,
+  "lunch_short_score": 8,
+  "blood_sugar_strategy": "优先选麦乐鸡/麦满分等蛋白主菜,避开汉堡套餐主食(精制面包 + 酱料隐藏糖,GL 极高),薯条换玉米杯或小食少量,饮料选零度可乐或美式咖啡",
+  "best_choice_for_at_risk": "麦乐鸡(5块) + 玉米杯 + 零度可乐",
+  "signature_dishes": [
+    {
+      "name": "巨无霸",
+      "estimated_calories": 540,
+      "added_sugar_level": "medium",
+      "gl_level": "high",
+      "protein_g": 25,
+      "blood_sugar_friendly": false,
+      "tags": ["经典汉堡", "高碳水", "酱料"],
+      "key_concerns": ["双层面包胚叠加酱料,GL 高", "套餐再加薯条和含糖饮料会放大血糖负担"],
+      "customization_tips": ["不要升级套餐", "饮料改零度可乐或美式咖啡", "酱料要求少加"]
+    },
+    {
+      "name": "麦辣鸡腿汉堡",
+      "estimated_calories": 500,
+      "added_sugar_level": "medium",
+      "gl_level": "high",
+      "protein_g": 24,
+      "blood_sugar_friendly": false,
+      "tags": ["热门汉堡", "油炸", "高碳水"],
+      "key_concerns": ["白面包胚 + 裹粉炸鸡 + 酱料组合,GL 高", "辣味酱和面包可能带来隐藏糖"],
+      "customization_tips": ["只点单堡不配薯条", "酱料要求少加", "如果午后要开会,换麦乐鸡更稳"]
+    },
+    {
+      "name": "麦乐鸡(5块)",
+      "estimated_calories": 220,
+      "added_sugar_level": "low",
+      "gl_level": "medium",
+      "protein_g": 14,
+      "blood_sugar_friendly": true,
+      "tags": ["鸡肉", "小食", "外皮裹粉"],
+      "key_concerns": ["外皮裹粉增加碳水", "甜酸酱和烧烤酱常含糖"],
+      "customization_tips": ["最好不蘸酱", "要蘸就只蘸半包", "用它替代汉堡主食"]
+    },
+    {
+      "name": "猪柳蛋麦满分",
+      "estimated_calories": 390,
+      "added_sugar_level": "low",
+      "gl_level": "medium",
+      "protein_g": 20,
+      "blood_sugar_friendly": true,
+      "tags": ["早餐", "蛋白质", "英式松饼"],
+      "key_concerns": ["英式松饼仍是精制主食", "猪柳钠含量偏高"],
+      "customization_tips": ["不要加薯饼套餐", "饮料选美式咖啡", "如果很饿,加鸡蛋优先于加薯饼"]
+    },
+    {
+      "name": "麦香鱼",
+      "estimated_calories": 360,
+      "added_sugar_level": "medium",
+      "gl_level": "high",
+      "protein_g": 16,
+      "blood_sugar_friendly": false,
+      "tags": ["鱼排汉堡", "酱料", "高碳水"],
+      "key_concerns": ["面包胚 + 鱼排裹粉 + 塔塔酱,GL 偏高"],
+      "customization_tips": ["要求塔塔酱少加", "不要配薯条", "饮料换无糖茶或美式咖啡"]
+    },
+    {
+      "name": "中薯条",
+      "estimated_calories": 330,
+      "added_sugar_level": "low",
+      "gl_level": "high",
+      "protein_g": 4,
+      "blood_sugar_friendly": false,
+      "tags": ["薯条", "淀粉", "油炸"],
+      "key_concerns": ["土豆淀粉 + 油炸,GL 高", "常和汉堡、含糖饮料一起出现"],
+      "customization_tips": ["换成玉米杯或不点配餐", "如果必须吃,两人分一份", "不要蘸番茄酱"]
+    },
+    {
+      "name": "麦旋风奥利奥口味",
+      "estimated_calories": 440,
+      "added_sugar_level": "high",
+      "gl_level": "high",
+      "protein_g": 8,
+      "blood_sugar_friendly": false,
+      "tags": ["甜品", "高糖", "冰淇淋"],
+      "key_concerns": ["冰淇淋 + 奥利奥碎,添加糖高", "餐后再吃会叠加血糖峰值"],
+      "customization_tips": ["不要作为套餐后甜点", "想吃甜口时和正餐错开", "优先换成无糖咖啡"]
+    }
+  ]
+}

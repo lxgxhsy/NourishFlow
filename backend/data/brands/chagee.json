@@ -1,0 +1,54 @@
+{
+  "brand": "霸王茶姬",
+  "category": "原叶鲜奶茶",
+  "typical_wait_minutes": 8,
+  "lunch_short_score": 7,
+  "blood_sugar_strategy": "优先选原叶鲜奶茶并明确 0 卡糖或不另外加糖,避开正常糖和加料,不要把奶茶和甜点/主食一起叠加",
+  "best_choice_for_at_risk": "伯牙绝弦 + 0卡糖 + 不加小料",
+  "signature_dishes": [
+    {
+      "name": "伯牙绝弦",
+      "estimated_calories": 260,
+      "added_sugar_level": "low",
+      "gl_level": "medium",
+      "protein_g": 9,
+      "blood_sugar_friendly": true,
+      "tags": ["原叶鲜奶茶", "招牌", "0卡糖可选"],
+      "key_concerns": ["正常糖版本会明显增加血糖负担", "鲜奶本身仍有乳糖"],
+      "customization_tips": ["选择 0 卡糖", "不加珍珠/椰果/奶盖", "餐后想喝时选小杯"]
+    },
+    {
+      "name": "寻香山茶",
+      "estimated_calories": 240,
+      "added_sugar_level": "low",
+      "gl_level": "medium",
+      "protein_g": 7,
+      "blood_sugar_friendly": true,
+      "tags": ["原叶鲜奶茶", "茶香", "0卡糖可选"],
+      "key_concerns": ["默认甜度不等于无糖", "奶茶不能替代饮水"],
+      "customization_tips": ["下单点 0 卡糖或不另外加糖", "不加小料", "不要和甜面包一起喝"]
+    },
+    {
+      "name": "桂馥兰香",
+      "estimated_calories": 250,
+      "added_sugar_level": "low",
+      "gl_level": "medium",
+      "protein_g": 7,
+      "blood_sugar_friendly": true,
+      "tags": ["原叶鲜奶茶", "花香", "0卡糖可选"],
+      "key_concerns": ["香型不代表低糖,甜度选择才关键"],
+      "customization_tips": ["选 0 卡糖", "不加奶盖", "如果正餐已有米饭面条,选小杯"]
+    },
+    {
+      "name": "万里木兰",
+      "estimated_calories": 225,
+      "added_sugar_level": "low",
+      "gl_level": "medium",
+      "protein_g": 7,
+      "blood_sugar_friendly": true,
+      "tags": ["原叶鲜奶茶", "茶乳", "0卡糖可选"],
+      "key_concerns": ["鲜奶茶仍有乳糖和能量", "加糖版本不适合血糖风险人群"],
+      "customization_tips": ["选择不另外加糖", "不加小料", "午餐只喝这一杯时搭配蛋白质食物"]
+    }
+  ]
+}
